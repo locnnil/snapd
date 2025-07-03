@@ -284,7 +284,7 @@ execute: |
   unsquashfs -d pc-kernel pc-kernel-repacked.snap
   # The kernel snap version has grown too much and when we use the fakestore
   # we append a fake1 string to the version, which can make the string grown
-  # beyond the 32 characters limit. Cut '+' character and what goes after to
+  # beyond the 64 characters limit. Cut '+' character and what goes after to
   # workaround this issue.
   original_pc_kernel_version="$(gojq '.version' -r --yaml-input pc-kernel/meta/snap.yaml)"
   sed -i 's#\(version: .*\)+.*#\1#' pc-kernel/meta/snap.yaml

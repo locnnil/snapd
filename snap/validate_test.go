@@ -114,9 +114,9 @@ func (s *ValidateSuite) TestValidateVersion(c *C) {
 	}
 	// version cannot be empty
 	c.Assert(ValidateVersion(""), ErrorMatches, `invalid snap version: cannot be empty`)
-	// version length cannot be >32
-	c.Assert(ValidateVersion("this-version-is-a-little-bit-older"), ErrorMatches,
-		`invalid snap version "this-version-is-a-little-bit-older": cannot be longer than 32 characters \(got: 34\)`)
+	// version length cannot be >64
+	c.Assert(ValidateVersion("this-version-is-a-little-bit-older-also-has-a-very-huge-version-name"), ErrorMatches,
+		`invalid snap version "this-version-is-a-little-bit-older-also-has-a-very-huge-version-name": cannot be longer than 64 characters \(got: 68\)`)
 }
 
 func (s *ValidateSuite) TestValidateLicense(c *C) {

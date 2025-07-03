@@ -247,8 +247,8 @@ version: %s
 		{version: "1.0a", error: ""},
 		{version: "1.2.3.4", error: ""},
 		{version: "1.2_", error: ".*must end with an ASCII alphanumeric.*"},
-		{version: "0123456789012345678901234567890123456789",
-			error: ".*cannot be longer than 32 characters.*"},
+		{version: "0123456789012345678901234567890123456789012345678901234567890123456789",
+			error: ".*cannot be longer than 64 characters.*"},
 		// version is optional
 		{version: "", error: ""},
 	} {
